@@ -71,25 +71,18 @@ def turn(board)
 end
 
 #TURN_COUNT
-#def turn_count(board)
-#  if over?(board) == false
-#    turns = board.count("X") + board.count("O")
-#  end
-#end
-
-#TURN_COUNT
 def turn_count(board)
-    turns = board.count("X") + board.count("O")
+  turns = board.count("X") + board.count("O")
 end
 
 #CURRENT_PLAYER
 def current_player(board)
+  "X"
+  if turn_count(board).odd?
+    "O"
+  else
     "X"
-    if turn_count(board).odd?
-      "O"
-    else
-      "X"
-    end
+  end
 end
 
 # did someone win?
